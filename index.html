@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Recipe Cards</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Delicious Recipes</h1>
+  </header>
+
+  <main class="recipe-container">
+    <div class="recipe-card">
+      <img src="https://via.placeholder.com/300x200" alt="Spaghetti Bolognese" />
+      <h2>Spaghetti Bolognese</h2>
+      <p>A classic Italian pasta dish with rich, meaty sauce.</p>
+      <button class="toggle-btn">Show More</button>
+      <div class="recipe-details">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li>Spaghetti</li>
+          <li>Minced meat</li>
+          <li>Tomato sauce</li>
+          <li>Onions, Garlic, Herbs</li>
+        </ul>
+        <h3>Preparation:</h3>
+        <p>Cook pasta. Sauté onions & garlic. Add meat, then sauce. Simmer & mix.</p>
+      </div>
+    </div>
+
+    <div class="recipe-card">
+      <img src="https://via.placeholder.com/300x200" alt="Vegetable Stir Fry" />
+      <h2>Vegetable Stir Fry</h2>
+      <p>Quick and healthy vegetables tossed in soy sauce.</p>
+      <button class="toggle-btn">Show More</button>
+      <div class="recipe-details">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li>Mixed vegetables</li>
+          <li>Soy sauce</li>
+          <li>Garlic & Ginger</li>
+        </ul>
+        <h3>Preparation:</h3>
+        <p>Chop veggies, stir fry in oil, add sauces, serve hot with rice or noodles.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll('.toggle-btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const details = btn.nextElementSibling;
+        details.classList.toggle('show');
+        btn.textContent = details.classList.contains('show') ? 'Show Less' : 'Show More';
+      });
+    });
+  </script>
+</body>
+</html>
